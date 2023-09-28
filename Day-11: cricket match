@@ -1,0 +1,15 @@
+#include<iostram>
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+int n,m;
+
+cin>>n>>m;
+if(n<=(m*6)*6){
+count<<"yes"
+ }
+}
+return 0;
+}
