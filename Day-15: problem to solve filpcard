@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+// Define a function to calculate minimum operations
+int minOperations(int n, int x) {
+    return min(x, n - x);
+}
+
+int main() {
+    int t;
+    cin >> t; // Read the number of test cases
+
+    for (int i = 0; i < t; i++) {
+        int n, x;
+        cin >> n >> x;
+        int result = minOperations(n, x);
+        cout << result << endl;
+    }
+
+    return 0;
+}
