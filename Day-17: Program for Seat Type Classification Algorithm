@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+string classifySeatType(int N) {
+    if (N % 6 == 1 || N % 6 == 0) {
+        if (N % 2 == 0) {
+            return "Upper Double";
+        } else {
+            return "Lower Double";
+        }
+    } else {
+        if (N % 2 == 0) {
+            return "Upper Single";
+        } else {
+            return "Lower Single";
+        }
+    }
+}
+
+int main() {
+    int T;
+    cin >> T; // Input the number of test cases
+
+    for (int i = 0; i < T; ++i) {
+        int N;
+        cin >> N; // Input the seat number
+        string seatType = classifySeatType(N);
+        cout << seatType << endl; // Output the seat type
+    }
+
+    return 0;
+}
