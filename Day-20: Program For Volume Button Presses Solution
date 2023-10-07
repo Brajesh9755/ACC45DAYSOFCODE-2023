@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int X, Y;
+        cin >> X >> Y; // Initial and final volume
+
+        int button_presses = abs(X - Y); // Calculate the absolute difference
+
+        cout << button_presses << endl; // Output the result
+    }
+
+    return 0;
+}
