@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T; // Number of test cases
+
+    while (T--) {
+        int N, K;
+        cin >> N >> K; // N: Number of customers, K: The number of operations
+        
+        vector<int> balances(N);
+
+        for (int i = 0; i < N; i++) {
+            cin >> balances[i]; // Input the initial balances
+        }
+
+        for (int i = 0; i < K; i++) {
+            int Q, D;
+            cin >> Q >> D; // Q: Query type (1 or 2), D: The amount to be deposited
+
+            if (Q == 1) {
+                // Process query type 1 (Deposit)
+                int X;
+                cin >> X; // X: The customer's number
+                balances[X - 1] += D; // Adjust the balance of customer X
+            } else {
+                // Process query type 2 (Withdraw)
+                int X;
+                cin >> X; // X: The customer's number
+                if (balances[X - 1] >= D) {
+                    balances[X - 1] -= D; // Adjust the balance of customer X
+                }
+            }
+        }
+
+        // Output the final balances for all customers
+        for (int i = 0; i < N; i++) {
+            cout << balances[i] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
