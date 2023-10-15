@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    while (T--) {
+        int X; // Marks Chef received
+        scanf("%d", &X);
+
+        int min_incorrect = 0;
+
+        if (X == 0) {
+            // Chef didn't attempt any question
+            min_incorrect = 0;
+        } else if (X == 100) {
+            // Chef answered all questions correctly
+            min_incorrect = 0;
+        } else {
+            // Calculate the minimum number of problems marked incorrect
+            min_incorrect = (100 - X) / 3;
+        }
+
+        printf("%d\n", min_incorrect);
+    }
+
+    return 0;
+}
