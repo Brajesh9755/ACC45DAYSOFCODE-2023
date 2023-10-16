@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// Function to check if two people can contribute to buy a Netflix subscription
+char* canContributeToSubscription(int a, int b, int c, int subscriptionCost) {
+    if (a + b >= subscriptionCost || b + c >= subscriptionCost || a + c >= subscriptionCost) {
+        return "YES";
+    } else {
+        return "NO";
+    }
+}
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    for (int i = 0; i < T; i++) {
+        int a, b, c, subscriptionCost;
+        scanf("%d %d %d %d", &a, &b, &c, &subscriptionCost);
+
+        char* result = canContributeToSubscription(a, b, c, subscriptionCost);
+        printf("%s\n", result);
+    }
+
+    return 0;
+}
