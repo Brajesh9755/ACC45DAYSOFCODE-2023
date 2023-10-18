@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Function to determine if Chef can achieve exactly Y marks
+char* can_achieve_Y_marks(int N, int X, int Y) {
+    // Check if Y is a multiple of X and Y is less than or equal to N*X
+    if (Y % X == 0 && Y <= N * X) {
+        return "YES";
+    } else {
+        return "NO";
+    }
+}
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    char* results[T];
+
+    // Process each test case
+    for (int i = 0; i < T; i++) {
+        int N, X, Y;
+        scanf("%d %d %d", &N, &X, &Y);
+        results[i] = can_achieve_Y_marks(N, X, Y);
+    }
+
+    // Print the results for each test case
+    for (int i = 0; i < T; i++) {
+        printf("%s\n", results[i]);
+    }
+
+    return 0;
+}
