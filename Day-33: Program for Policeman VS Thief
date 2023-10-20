@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function to calculate the minimum time to catch the thief
+double min_time_to_catch_thief(int X, int Y) {
+    // Calculate the absolute difference in positions
+    int distance = abs(X - Y);
+
+    // Calculate the time it takes for the policeman to catch the thief
+    // The policeman's speed is 2 units per second, and the thief's speed is 1 unit per second
+    // The time is the distance divided by the relative speed (2 - 1 = 1 unit per second)
+    double time = (double) distance / 1.0;
+
+    return time;
+}
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    for (int t = 0; t < T; t++) {
+        int X, Y;
+        scanf("%d %d", &X, &Y);
+
+        // Calculate and print the minimum time for each test case
+        double result = min_time_to_catch_thief(X, Y);
+        printf("%.0lf\n", result);
+    }
+
+    return 0;
+}
