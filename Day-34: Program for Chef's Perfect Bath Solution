@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    for (int t = 0; t < T; t++) {
+        int A, B, X, Y;
+        scanf("%d %d %d %d", &A, &B, &X, &Y);
+
+        if (A == B) {
+            printf("YES\n");
+        } else if (A < B) {
+            // If the desired temperature is higher, Chef needs hot water to increase it.
+            int hot_water_needed = B - A;
+            if (X >= hot_water_needed) {
+                printf("YES\n");
+            } else {
+                printf("NO\n");
+            }
+        } else {
+            // If the desired temperature is lower, Chef needs cold water to decrease it.
+            int cold_water_needed = A - B;
+            if (Y >= cold_water_needed) {
+                printf("YES\n");
+            } else {
+                printf("NO\n");
+            }
+        }
+    }
+
+    return 0;
+}
