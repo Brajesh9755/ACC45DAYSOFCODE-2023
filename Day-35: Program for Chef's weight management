@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Function to check if Chef can measure the weight
+char* canMeasureWeight(int W, int X, int Y, int Z) {
+    // Check if any of the individual weights is equal to W
+    if (W == X || W == Y || W == Z) {
+        return "YES";
+    }
+
+    // Check if the sum of any two weights is equal to W
+    if (W == X + Y || W == X + Z || W == Y + Z) {
+        return "YES";
+    }
+
+    // Check if the sum of all three weights is equal to W
+    if (W == X + Y + Z) {
+        return "YES";
+    }
+
+    // If none of the above conditions are met, Chef cannot measure the weight.
+    return "NO";
+}
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    for (int i = 0; i < T; i++) {
+        int W, X, Y, Z;
+        scanf("%d %d %d %d", &W, &X, &Y, &Z);
+        char* result = canMeasureWeight(W, X, Y, Z);
+        printf("%s\n", result);
+    }
+
+    return 0;
+}
