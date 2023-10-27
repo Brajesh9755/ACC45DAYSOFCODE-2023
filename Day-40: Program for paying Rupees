@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+    
+    while (T--) {
+        int X; // Amount to be paid
+        scanf("%d", &X);
+
+        // Check if it's possible to pay X rupees using only 5 and 10 rupee coins
+        if (X % 5 != 0) {
+            printf("-1\n");
+        } else {
+            int coins = 0;
+            while (X > 0) {
+                if (X >= 10) {
+                    X -= 10;
+                    coins++;
+                } else if (X >= 5) {
+                    X -= 5;
+                    coins++;
+                }
+            }
+            printf("%d\n", coins);
+        }
+    }
+
+    return 0;
+}
