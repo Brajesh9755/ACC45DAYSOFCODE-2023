@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    while (T--) {
+        int P, Q; // Alice's and Bob's scores
+        scanf("%d %d", &P, &Q);
+
+        // Calculate the total number of points scored
+        int totalPoints = P + Q;
+
+        // Determine whose serve it is based on the total number of points
+        if (totalPoints % 4 == 0) {
+            // If the total number of points is a multiple of 4, it's Alice's serve
+            printf("Alice\n");
+        } else {
+            // Otherwise, it's Bob's serve
+            printf("Bob\n");
+        }
+    }
+
+    return 0;
+}
