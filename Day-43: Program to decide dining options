@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    
+    while (T--) {
+        int N, M;
+        scanf("%d %d", &N, &M);
+        
+        // Apply the 10% discount to online order
+        int discountedPrice = N - (N * 10 / 100);
+        
+        if (discountedPrice < M) {
+            printf("ONLINE\n");
+        } else if (discountedPrice > M) {
+            printf("DINING\n");
+        } else {
+            printf("EITHER\n");
+        }
+    }
+    
+    return 0;
+}
