@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+    scanf("%d %d", &X, &Y);
+
+    // Calculate the time spent watching the first Y minutes at double speed
+    int time_double_speed = Y / 2;
+
+    // Calculate the time spent watching the remaining (X - Y) minutes at normal speed
+    int time_normal_speed = X - Y;
+
+    // Calculate the total time spent watching the movie
+    int total_time = time_double_speed + time_normal_speed;
+
+    printf("%d\n", total_time);
+
+    return 0;
+}
