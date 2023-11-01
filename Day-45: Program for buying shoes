@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int T; // Number of test cases
+    scanf("%d", &T);
+
+    while (T--) {
+        int N, M; // Number of friends and number of left shoes
+        scanf("%d %d", &N, &M);
+
+        int extra_shoes = 0;
+
+        if (M >= N) {
+            // If Chef has at least N left shoes, he only needs to buy N right shoes to form N pairs
+            extra_shoes = N;
+        } else {
+            // Chef needs to buy N - M left shoes and N right shoes to form N pairs
+            extra_shoes = N - M;
+        }
+
+        printf("%d\n", extra_shoes);
+    }
+
+    return 0;
+}
